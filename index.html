@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de Privacidad — Feel the Beat</title>
-<meta name="description" content="Política de privacidad de la aplicación Feel the Beat: Metrónomo y detector de ritmo.">
+<meta name="description" content="Política de privacidad de la aplicación Feel the Beat: Metrónomo y detector de ritmo. / Privacy Policy for the Feel the Beat: Metronome &amp; BPM app.">
 <meta name="robots" content="index, follow">
 <style>
   :root { color-scheme: light dark; }
@@ -18,14 +18,29 @@
   h1 { font-size: 1.7rem; line-height: 1.25; margin: 0 0 4px; }
   h2 { font-size: 1.15rem; margin: 32px 0 8px; }
   p, li { font-size: 1rem; }
-  .sub { color: #666; margin: 0 0 28px; font-size: .92rem; }
+  .sub { color: #666; margin: 0 0 20px; font-size: .92rem; }
   .box { border: 1px solid #d8d8d8; border-left: 4px solid #2a7de0; background: #f6f9fe; padding: 14px 16px; border-radius: 6px; margin: 20px 0; }
   .box p { margin: 6px 0; }
   table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: .95rem; }
   th, td { text-align: left; padding: 9px 10px; border: 1px solid #d8d8d8; vertical-align: top; }
   th { background: #f2f2f2; }
   a { color: #2a7de0; }
+  code { font-size: .9em; background: rgba(127,127,127,.15); padding: 1px 5px; border-radius: 4px; }
   footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid #e2e2e2; color: #666; font-size: .9rem; }
+
+  /* Selector de idioma */
+  .langbar { display: flex; gap: 8px; margin: 0 0 24px; }
+  .langbar button {
+    font: inherit; font-size: .92rem; cursor: pointer;
+    padding: 7px 16px; border-radius: 999px;
+    border: 1px solid #b9b9b9; background: transparent; color: inherit;
+  }
+  .langbar button[aria-pressed="true"] { background: #2a7de0; border-color: #2a7de0; color: #fff; font-weight: 600; }
+
+  /* Solo se muestra el idioma activo */
+  html[data-lang="es"] [data-lang-block="en"] { display: none; }
+  html[data-lang="en"] [data-lang-block="es"] { display: none; }
+
   @media (prefers-color-scheme: dark) {
     body { background: #16181c; color: #e8e8e8; }
     .sub, footer { color: #9aa0a6; }
@@ -33,11 +48,22 @@
     th, td { border-color: #333; }
     th { background: #23262b; }
     footer { border-color: #2a2d33; }
+    .langbar button { border-color: #555; }
   }
 </style>
 </head>
 <body>
 <main>
+
+<div class="langbar" role="group" aria-label="Idioma / Language">
+  <button type="button" data-set-lang="es" aria-pressed="true">Español</button>
+  <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+</div>
+
+<!-- ============================================================
+     ESPAÑOL
+     ============================================================ -->
+<div data-lang-block="es">
 
 <h1>Política de Privacidad</h1>
 <p class="sub">Feel the Beat: Metrónomo y BPM &middot; Última actualización: 15 de octubre de 2026</p>
@@ -202,8 +228,8 @@
 
 <h2>12. Idioma</h2>
 <p>
-  Este documento está redactado en español. La versión en inglés, si está disponible, prevalece en caso de
-  discrepancia.
+  Esta política se publica en español y en inglés con contenido equivalente. Puedes cambiar de idioma
+  con el botón situado al inicio del documento.
 </p>
 
 <footer>
@@ -212,6 +238,208 @@
   Documento actualizado el 15 de octubre de 2026.</p>
 </footer>
 
+</div>
+
+<!-- ============================================================
+     ENGLISH
+     ============================================================ -->
+<div data-lang-block="en">
+
+<h1>Privacy Policy</h1>
+<p class="sub">Feel the Beat: Metronome &amp; BPM &middot; Last updated: 15 October 2026</p>
+
+<h2>1. Who is responsible</h2>
+<p>
+  This policy applies to the mobile app <strong>Feel the Beat: Metronome &amp; BPM</strong>
+  (package identifier <code>com.order66.feelthebeat</code>), published on Google Play for Android.
+  The app developer is the data controller responsible for the processing described here.
+</p>
+<p>
+  For any question about this policy or about how your data is handled, you can write to:
+  <a href="mailto:albertjunior90@gmail.com">albertjunior90@gmail.com</a>.
+</p>
+
+<div class="box">
+  <p><strong>Summary in one sentence:</strong> the app has no servers of its own, creates no user accounts,
+  and stores no personal information. The only data processing comes from Google advertising, which is
+  governed by Google's own privacy policies.</p>
+</div>
+
+<h2>2. What data we do NOT collect</h2>
+<p>To avoid misunderstandings, it is worth being explicit. Feel the Beat:</p>
+<ul>
+  <li><strong>Does not collect or store personal information</strong> (name, email address, phone number, location).</li>
+  <li><strong>Does not require registration or a user account.</strong> There is no server where such information could be stored.</li>
+  <li><strong>Does not build its own behavioural profiles</strong> or keep data chains stored on the device.</li>
+  <li><strong>Does not include analytics, crash reporting, or any advertising of its own.</strong></li>
+</ul>
+
+<h2>3. Microphone use</h2>
+<p>
+  The app requests the <strong>audio recording</strong> permission (<code>RECORD_AUDIO</code>) because its
+  main function is to <strong>detect the tempo (BPM) of the sound playing near your microphone</strong>,
+  whether that is music or the metronome itself.
+</p>
+<p>
+  How that information is handled is as follows, and this part matters:
+</p>
+<ul>
+  <li>Audio is analysed <strong>in real time and entirely on your device</strong>.</li>
+  <li>Audio is <strong>never recorded, never stored, and never transmitted</strong> to any server.</li>
+  <li>What the app computes is a single number (beats per minute). That number is shown on screen and, in
+  metronome or vibration mode, is used to coordinate the lights, the sound and the vibration.</li>
+  <li>When you close the app, that value is gone. No record of it is kept anywhere.</li>
+</ul>
+<p>
+  You can revoke the microphone permission at any time from
+  <em>Settings &rarr; Apps &rarr; Feel the Beat &rarr; Permissions</em>. The app keeps working, but without
+  automatic tempo detection.
+</p>
+
+<h2>4. Advertising (Google AdMob)</h2>
+<p>
+  The app displays advertising through <strong>Google AdMob</strong>, and only through advertising sized to
+  fit the screen (banner format).
+</p>
+<p>
+  When ads are served, Google (along with the advertisers and intermediaries in its network) may process
+  data such as:
+</p>
+<table>
+  <thead>
+    <tr><th>Data</th><th>What it is used for</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Advertising ID</td><td>Identify the device in order to show relevant ads and limit their frequency.</td></tr>
+    <tr><td>IP address, device information and operating system details</td><td>Delivering and measuring advertising.</td></tr>
+    <tr><td>Interaction with ads</td><td>Knowing whether an ad was shown, tapped, or dismissed.</td></tr>
+    <tr><td>Approximate location</td><td>Only if enabled in your Google Play settings.</td></tr>
+    <tr><td>Previous ad activity across other apps</td><td>Personalising the advertising you are shown.</td></tr>
+  </tbody>
+</table>
+<p>
+  This processing is carried out by Google and is described in detail in the
+  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.
+  You can control which advertising data Google uses in
+  <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">My Ad Center</a>, and you can
+  reset or delete your Advertising ID from
+  <em>Settings &rarr; Privacy &rarr; Ads</em> on your Android device.
+</p>
+
+<h2>5. Permissions the app requests</h2>
+<table>
+  <thead>
+    <tr><th>Permission</th><th>What it is used for</th><th>Required?</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><code>RECORD_AUDIO</code></td><td>Detecting the tempo of the sound in order to compute the BPM.</td><td>Yes, for the main function</td></tr>
+    <tr><td><code>VIBRATE</code></td><td>Producing vibration synced to the beat, if you enable it in the app settings.</td><td>No</td></tr>
+    <tr><td><code>com.google.android.gms.permission.AD_ID</code></td><td>Allows personalised advertising from Google AdMob to be served.</td><td>No</td></tr>
+  </tbody>
+</table>
+<p>
+  The app does not request location, camera, contacts, calendar, SMS, or access to file storage.
+</p>
+
+<h2>6. Third parties</h2>
+<p>These are the only third-party components involved:</p>
+<ul>
+  <li><strong>Google AdMob / Google Mobile Ads SDK</strong> — serves the advertising and manages consent (see sections 4 and 7). Google acts as an independent or joint data controller depending on the jurisdiction.</li>
+  <li><strong>TarsosDSP library</strong> — runs entirely inside the app to analyse audio. <strong>It collects and transmits no data.</strong></li>
+</ul>
+<p>There are no intermediate servers, analytics SDKs, or additional advertising services.</p>
+
+<h2>7. Consent (CMP)</h2>
+<p>
+  Before showing personalised advertising, the app uses Google's <strong>User Messaging Platform (UMP)</strong>,
+  a consent mechanism that complies with the IAB's Transparency and Consent Framework (TCF).
+</p>
+<p>
+  When required, you are shown a screen explaining the purposes and the advertising partners involved.
+  You can accept, refuse, or manage your choices. Your decision is saved so that you are not asked again
+  every time you use the app.
+</p>
+<p>
+  If you do not consent, the app keeps working normally and Google will serve
+  <strong>non-personalised</strong> advertising, or serve no ads at all.
+</p>
+<p>
+  You can change your decision at any time using the <strong>privacy options</strong> button (shield icon)
+  in the top right of the app.
+</p>
+
+<h2>8. Your rights</h2>
+<p>
+  For the data Google processes for advertising purposes, you may exercise your rights of access,
+  rectification, erasure, objection, restriction and portability, under the GDPR (European Union) and
+  Mexico's Federal Law on Protection of Personal Data Held by Private Parties (LFPDPPP).
+</p>
+<ul>
+  <li><strong>Access, correct and delete your advertising data:</strong> <a href="https://myadcenter.google.com/" target="_blank" rel="noopener">myadcenter.google.com</a></li>
+  <li><strong>Withdraw consent to personalised advertising:</strong> <em>Settings &rarr; Privacy &rarr; Ads</em> on your device, or the privacy options button inside the app.</li>
+  <li><strong>For any other question about this app:</strong> <a href="mailto:albertjunior90@gmail.com">albertjunior90@gmail.com</a></li>
+</ul>
+<p>
+  The developer stores no personal data, so there is no database from which access or erasure requests
+  could be fulfilled. Requests relating to Google are handled through the links above.
+</p>
+
+<h2>9. Retention</h2>
+<p>
+  No data derived from audio is retained at any point, since it is processed and discarded on the device.
+  Advertising data is retained by Google under its own policies, generally for up to 90 days.
+</p>
+
+<h2>10. Children</h2>
+<p>
+  Feel the Beat is not directed at children under 13, nor at anyone below the minimum age required in their
+  country of residence. We do not knowingly collect data from children. If you believe a child has provided
+  us with information, contact us and we will delete it.
+</p>
+
+<h2>11. Changes to this policy</h2>
+<p>
+  This policy may be updated if the app changes or if applicable regulations change. The date of the last
+  update appears at the top of this document. Any substantial change will be announced in the app or on its
+  Google Play listing before it takes effect.
+</p>
+
+<h2>12. Language</h2>
+<p>
+  This policy is published in Spanish and in English with equivalent content. You can switch language using
+  the button at the top of this document.
+</p>
+
+<footer>
+  <p><strong>Feel the Beat: Metronome &amp; BPM</strong><br>
+  Contact: <a href="mailto:albertjunior90@gmail.com">albertjunior90@gmail.com</a><br>
+  Document last updated 15 October 2026.</p>
+</footer>
+
+</div>
+
 </main>
+<script>
+  (function () {
+    var titulos = {
+      es: "Política de Privacidad — Feel the Beat",
+      en: "Privacy Policy — Feel the Beat"
+    };
+    function aplicar(lang) {
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      document.title = titulos[lang];
+      document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === lang));
+      });
+    }
+    document.querySelectorAll('[data-set-lang]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        aplicar(btn.getAttribute('data-set-lang'));
+      });
+    });
+    aplicar('es');
+  })();
+</script>
 </body>
 </html>
